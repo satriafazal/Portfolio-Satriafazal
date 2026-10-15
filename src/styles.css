@@ -731,6 +731,15 @@ ol {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.25);
   transition: width 0.4s var(--ease-out), background-color 0.4s ease;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.projects-dot:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 2px;
 }
 
 .projects-dot.is-active {
@@ -1050,15 +1059,11 @@ ol {
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-}
-
-.footer-note {
-  font-size: 0.76rem;
-  color: rgba(246, 244, 239, 0.4);
+  justify-content: center;
+  text-align: center;
+  padding: 0 var(--pad-x);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }
 
 /* ---------------- Responsive ---------------- */

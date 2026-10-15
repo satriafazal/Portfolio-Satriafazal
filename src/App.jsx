@@ -85,11 +85,6 @@ export default function App() {
           <span>
             © {new Date().getFullYear()} {profile.firstName} {profile.lastName}
           </span>
-          <span className="footer-note">
-            {lang === "id"
-              ? "Dibangun dengan React, Vite & GSAP — di-deploy gratis di Vercel/Netlify/GitHub Pages."
-              : "Built with React, Vite & GSAP — deployed free on Vercel/Netlify/GitHub Pages."}
-          </span>
         </div>
       </footer>
     </>

@@ -46,12 +46,23 @@ export const heroImages = {
   alternate: profileAlternate,
 };
 
-// ---------- Sosial media (PLACEHOLDER — ganti href dengan profil asli) ----------
+// ---------- Sosial media (GitHub, LinkedIn, Instagram) ----------
 export const socials = [
-  { name: "Instagram", href: "#", icon: "instagram" },
-  { name: "X / Twitter", href: "#", icon: "x" },
-  { name: "YouTube", href: "#", icon: "youtube" },
-  { name: "LinkedIn", href: "#", icon: "linkedin" },
+  {
+    name: "GitHub",
+    href: "https://github.com/satriafazal/",
+    icon: "github",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/satriafazal",
+    icon: "linkedin",
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/satriafzl_?cplk=MW85ZmJhaGFlY2Z3eg==",
+    icon: "instagram",
+  },
 ];
 
 // ---------- 2. About ----------
@@ -388,10 +399,10 @@ export const contact = {
     id: "Terbuka untuk kesempatan magang, pekerjaan awal karier, kolaborasi proyek, freelance, dan bertukar ide dengan komunitas teknologi.",
     en: "Open to internship and early-career opportunities, full-time roles, freelance projects, collaborations, and connecting with technology communities.",
   },
-  email: "hello@satriafzl.dev", // PLACEHOLDER — ganti dengan email asli
+  email: "Satriafaza24@gmail.com",
   links: [
-    { name: "GitHub", href: "#" }, // PLACEHOLDER — ganti dengan URL asli
-    { name: "LinkedIn", href: "#" }, // PLACEHOLDER
-    { name: "Instagram", href: "#" }, // PLACEHOLDER
+    { name: "GitHub", href: "https://github.com/satriafazal/" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/satriafazal" },
+    { name: "Instagram", href: "https://www.instagram.com/satriafzl_?cplk=MW85ZmJhaGFlY2Z3eg==" },
   ],
 };
