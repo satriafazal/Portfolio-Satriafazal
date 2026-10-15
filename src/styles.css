@@ -757,13 +757,13 @@ ol {
   display: flex;
   gap: clamp(1.5rem, 3vw, 3rem);
   width: max-content;
-  padding-right: 10vw;
+  padding-right: 14vw;
   will-change: transform;
 }
 
 .proj-card {
   flex: 0 0 auto;
-  width: clamp(420px, 46vw, 620px);
+  width: clamp(360px, 42vw, 500px);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--line-light);
   transition: border-color 0.45s ease, background-color 0.45s ease;
@@ -774,9 +774,14 @@ ol {
   background: rgba(255, 255, 255, 0.07);
 }
 
+/* SEMENTARA: gambar proyek disembunyikan sesuai permintaan.
+   Untuk menampilkan lagi: hapus baris `display: none;` di bawah ini.
+   Rasio & tinggi maks sudah diatur agar kartu tetap muat di viewport. */
 .proj-media {
+  display: none;
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 21 / 9;
+  max-height: 30vh;
   overflow: hidden;
 }
 
@@ -792,18 +797,17 @@ ol {
 }
 
 .proj-status {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 0.66rem;
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--paper);
-  background: rgba(16, 16, 21, 0.78);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
-  padding: 0.3rem 0.75rem;
+  padding: 0.28rem 0.75rem;
+  margin: 0.55rem 0 0.15rem;
 }
 
 .proj-body {

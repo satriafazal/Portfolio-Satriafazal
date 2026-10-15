@@ -52,6 +52,11 @@ PORTFOLIO WEB/
    - Gambar proyek: field `img` di setiap objek `projects`.
    - Saat ini memakai URL Unsplash (placeholder internet) dengan fallback
      SVG otomatis jika gagal dimuat.
+   - **Gambar proyek sedang disembunyikan sementara** (`.proj-media {
+     display: none }` di `styles.css`, ada komentar penandanya). Untuk
+     menampilkan lagi hapus baris `display: none` tersebut — rasio 21:9 +
+     `max-height: 30vh` sudah diatur agar kartu tetap muat di viewport.
+     Badge status proyek ada di body kartu (bukan lagi di atas gambar).
 4. **Link sosial & kontak** → `socials` dan `contact` di `content.js`
    (saat ini masih placeholder `#`).
 

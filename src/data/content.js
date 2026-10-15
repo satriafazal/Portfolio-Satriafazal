@@ -38,7 +38,7 @@ export const profile = {
 
 import profilePrimary from "../public/BWP.png";
 import profileAlternate from "../public/Profile.png";
-import efurnitureImg from "../public/efurniture.png";
+import projectEfurniture from "../public/efurniture.png";
 
 // ---------- Gambar hero ----------
 export const heroImages = {
@@ -258,7 +258,7 @@ export const projects = [
       en: "E-commerce · Order Management",
     },
     status: { id: "Proyek Akademik Selesai", en: "Completed Academic Project" },
-    img: efurnitureImg,
+    img: projectEfurniture,
     desc: {
       id: "Aplikasi e-commerce furnitur dengan alur belanja dari penjelajahan produk hingga checkout, serta fitur pengelolaan produk dan pesanan.",
       en: "A furniture e-commerce application covering product discovery, shopping, checkout, and administrative product and order management.",

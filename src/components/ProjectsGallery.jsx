@@ -47,9 +47,32 @@ export default function ProjectsGallery({ lang, t }) {
         // jarak tempuh = lebar total track - lebar area terlihat
         const getAmount = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
 
+        // heading mengikuti kartu yang paling dekat dengan titik fokus.
+        // Dipanggil dari onUpdate ScrollTrigger DAN onUpdate tween (scrub lag).
+        const updateActive = () => {
+          const cards = cardsRef.current.filter(Boolean);
+          if (!cards.length) return;
+          const focusX = window.innerWidth * 0.62;
+          let best = 0;
+          let bestDist = Infinity;
+          cards.forEach((card, i) => {
+            const r = card.getBoundingClientRect();
+            const d = Math.abs(r.left + r.width / 2 - focusX);
+            if (d < bestDist) {
+              bestDist = d;
+              best = i;
+            }
+          });
+          if (best !== currentRef.current) {
+            currentRef.current = best;
+            setCurrent(best);
+          }
+        };
+
         gsap.to(track, {
           x: () => -getAmount(),
           ease: "none",
+          onUpdate: updateActive,
           scrollTrigger: {
             trigger: rootRef.current,
             start: "top top",
@@ -58,26 +81,7 @@ export default function ProjectsGallery({ lang, t }) {
             scrub: 1,
             anticipatePin: 1,
             invalidateOnRefresh: true,
-            onUpdate: () => {
-              // cari kartu yang paling dekat dengan titik fokus (kanan tengah)
-              const cards = cardsRef.current.filter(Boolean);
-              if (!cards.length) return;
-              const focusX = window.innerWidth * 0.62;
-              let best = 0;
-              let bestDist = Infinity;
-              cards.forEach((card, i) => {
-                const r = card.getBoundingClientRect();
-                const d = Math.abs(r.left + r.width / 2 - focusX);
-                if (d < bestDist) {
-                  bestDist = d;
-                  best = i;
-                }
-              });
-              if (best !== currentRef.current) {
-                currentRef.current = best;
-                setCurrent(best);
-              }
-            },
+            onUpdate: updateActive,
           },
         });
       }, rootRef);
@@ -171,7 +175,6 @@ export default function ProjectsGallery({ lang, t }) {
                       e.currentTarget.src = placeholderSvg(p.title, 1200, 800);
                     }}
                   />
-                  <span className="proj-status">{t(p.status)}</span>
                 </div>
                 <div className="proj-body">
                   <div className="proj-meta">
@@ -179,6 +182,7 @@ export default function ProjectsGallery({ lang, t }) {
                     <span className="proj-kind">{t(p.kind)}</span>
                   </div>
                   <h3 className="proj-title">{p.title}</h3>
+                  <span className="proj-status">{t(p.status)}</span>
                   <p className="proj-desc">{t(p.desc)}</p>
                   <p className="proj-contrib-title">
                     {lang === "id" ? "Kontribusi saya" : "My contributions"}
